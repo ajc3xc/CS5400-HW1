@@ -268,10 +268,24 @@ class lexem:
 
 
 # main function
+start_reading_input = False
 counter = 0
+num_lines_left = None
 for item in sys.stdin:
     item = item[:-1]  # remove newline
     item_lexem = lexem(item)
-    if counter == 0: print(item)
-    else: print(str(counter) + ": " + item_lexem.determine_type())
-    counter += 1  # increment by 1
+    if not start_reading_input:
+        start_reading_input = True
+        try:
+            num_lines_left = int(item)
+        except:
+            print("Number of lines left is not an int")
+            break
+        print(item)
+        counter += 1
+    elif num_lines_left <= 0:
+        break
+    else:
+        print(str(counter) + ": " + item_lexem.determine_type())
+        counter += 1  # increment by 1
+        num_lines_left -= 1
