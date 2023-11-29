@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Gates/non_dropdown/in_off_gate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Gates/non_dropdown/out_gate.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Gates/non_dropdown/in_on_gate.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Gates/non_dropdown/connector_gate.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Gates/non_dropdown/non_dropdown_test.gd" type="Script" id=5]
+[ext_resource path="res://Gates/boundary_box/bounding_box.tscn" type="PackedScene" id=6]
+
+[node name="non_dropdown_multiple" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="boundary_box" parent="." instance=ExtResource( 6 )]
+position = Vector2( 139, -2 )
+
+[node name="in_off_gate" parent="." instance=ExtResource( 1 )]
+position = Vector2( 150, 80 )
+
+[node name="in_on_gate" parent="." instance=ExtResource( 3 )]
+position = Vector2( 154, 317 )
+
+[node name="out_gate" parent="." instance=ExtResource( 2 )]
+position = Vector2( 692, 216 )
+
+[node name="connector_gate" parent="." instance=ExtResource( 4 )]
+position = Vector2( 463, 218 )

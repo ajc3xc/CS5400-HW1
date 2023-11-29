@@ -1,0 +1,109 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI/Gate_Selection.gd" type="Script" id=1]
+
+[node name="Gate_Selection" type="Node2D" groups=["UI"]]
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_top = -1.0
+margin_right = 150.0
+margin_bottom = 597.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+margin_right = 150.0
+margin_bottom = 68.0
+alignment = 1
+
+[node name="Label" type="Button" parent="Panel"]
+margin_top = 56.0
+margin_right = 150.0
+margin_bottom = 76.0
+text = "Label"
+
+[node name="AND" type="Button" parent="Panel"]
+margin_top = 95.0
+margin_right = 150.0
+margin_bottom = 115.0
+text = "AND"
+
+[node name="OR" type="Button" parent="Panel"]
+margin_top = 149.0
+margin_right = 150.0
+margin_bottom = 169.0
+text = "OR"
+
+[node name="XOR" type="Button" parent="Panel"]
+margin_top = 196.0
+margin_right = 150.0
+margin_bottom = 216.0
+text = "XOR"
+
+[node name="NOT" type="Button" parent="Panel"]
+margin_top = 243.0
+margin_right = 150.0
+margin_bottom = 263.0
+text = "NOT"
+
+[node name="NAND" type="Button" parent="Panel"]
+margin_left = 3.0
+margin_top = 285.0
+margin_right = 153.0
+margin_bottom = 305.0
+text = "NAND"
+
+[node name="NOR" type="Button" parent="Panel"]
+margin_top = 330.0
+margin_right = 150.0
+margin_bottom = 350.0
+text = "NOR"
+
+[node name="XNOR" type="Button" parent="Panel"]
+margin_top = 401.0
+margin_right = 150.0
+margin_bottom = 421.0
+text = "XNOR"
+
+[node name="ON" type="Button" parent="Panel"]
+margin_top = 444.0
+margin_right = 150.0
+margin_bottom = 464.0
+text = "ON"
+
+[node name="OFF" type="Button" parent="Panel"]
+margin_top = 484.0
+margin_right = 150.0
+margin_bottom = 504.0
+text = "OFF"
+
+[node name="OUT" type="Button" parent="Panel"]
+margin_top = 526.0
+margin_right = 150.0
+margin_bottom = 546.0
+text = "OUT"
+
+[node name="CONNECT" type="Button" parent="Panel"]
+margin_top = 560.0
+margin_right = 150.0
+margin_bottom = 580.0
+text = "CONNECT"
+
+[node name="Label2" type="Label" parent="Panel"]
+margin_right = 148.0
+margin_bottom = 52.0
+text = "Component Selection"
+align = 1
+valign = 1
+
+[connection signal="button_down" from="Panel/Label" to="." method="_on_Label_button_down"]
+[connection signal="button_down" from="Panel/AND" to="." method="_on_AND_button_down"]
+[connection signal="button_down" from="Panel/OR" to="." method="_on_OR_button_down"]
+[connection signal="button_down" from="Panel/XOR" to="." method="_on_XOR_button_down"]
+[connection signal="button_down" from="Panel/NOT" to="." method="_on_NOT_button_down"]
+[connection signal="button_down" from="Panel/NAND" to="." method="_on_NAND_button_down"]
+[connection signal="button_down" from="Panel/NOR" to="." method="_on_NOR_button_down"]
+[connection signal="button_down" from="Panel/XNOR" to="." method="_on_XNOR_button_down"]
+[connection signal="button_down" from="Panel/ON" to="." method="_on_ON_button_down"]
+[connection signal="button_down" from="Panel/OFF" to="." method="_on_OFF_button_down"]
+[connection signal="button_down" from="Panel/OUT" to="." method="_on_OUT_button_down"]
+[connection signal="button_down" from="Panel/CONNECT" to="." method="_on_CONNECT_button_down"]

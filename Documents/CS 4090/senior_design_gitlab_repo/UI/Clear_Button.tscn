@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI/Clear_Button.gd" type="Script" id=1]
+
+[node name="Clear_Button" type="Node2D" groups=["UI"]]
+script = ExtResource( 1 )
+
+[node name="Button" type="Button" parent="."]
+margin_right = 150.0
+margin_bottom = 70.0
+text = "Clear All Nodes"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

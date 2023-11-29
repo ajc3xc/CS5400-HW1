@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 366.5, 300 )
+
+[node name="boundary_box" type="StaticBody2D" groups=["bounding_box"]]
+
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+position = Vector2( 366.5, 300 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 734.0
+margin_bottom = 600.0
+mouse_filter = 2
+color = Color( 1, 1, 1, 0.12549 )

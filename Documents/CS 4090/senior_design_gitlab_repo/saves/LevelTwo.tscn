@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Gates/non_dropdown/in_on_gate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Gates/non_dropdown/in_off_gate.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Gates/dropdown/OR.gd" type="Script" id=3]
+[ext_resource path="res://Gates/dropdown/OR.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Gates/non_dropdown/out_gate.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Gates/non_dropdown/in_off_gate.gd" type="Script" id=6]
+[ext_resource path="res://Gates/non_dropdown/out_gate.gd" type="Script" id=7]
+[ext_resource path="res://Gates/non_dropdown/in_on_gate.gd" type="Script" id=8]
+
+[node name="save_node" type="Node2D"]
+
+[node name="in_on_gate" type="Node2D" parent="." groups=["gates"] instance=ExtResource( 1 )]
+position = Vector2( 174, 203 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="connecting_line0" type="Line2D" parent="in_on_gate"]
+points = PoolVector2Array( 71, 37, 71, 37 )
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="OR" type="Node2D" parent="." groups=["dropdown", "gates"] instance=ExtResource( 4 )]
+position = Vector2( 424.5, 235 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="connecting_line0" type="Line2D" parent="OR"]
+points = PoolVector2Array( 212.989, 53.6641, 323.511, 57.3359 )
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="connecting_line1" type="Line2D" parent="OR"]
+points = PoolVector2Array( -21.929, 18.3159, -159.571, 6.68414 )
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="connecting_line2" type="Line2D" parent="OR"]
+points = PoolVector2Array( -20.8311, 88.5937, -164.669, 107.406 )
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="in_off_gate" type="Node2D" parent="." groups=["gates"] instance=ExtResource( 2 )]
+position = Vector2( 169, 308 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="connecting_line0" type="Line2D" parent="in_off_gate"]
+points = PoolVector2Array( 71, 37, 71, 37 )
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="out_gate" type="Node2D" parent="." groups=["gates"] instance=ExtResource( 5 )]
+position = Vector2( 768, 257 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="connecting_line0" type="Line2D" parent="out_gate"]
+points = PoolVector2Array( 0, 36, 0, 36 )
+default_color = Color( 1, 1, 1, 1 )

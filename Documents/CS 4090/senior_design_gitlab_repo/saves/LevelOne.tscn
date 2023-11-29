@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Gates/non_dropdown/in_on_gate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Gates/dropdown/AND.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Gates/non_dropdown/in_on_gate.gd" type="Script" id=3]
+[ext_resource path="res://Gates/non_dropdown/out_gate.gd" type="Script" id=4]
+[ext_resource path="res://Gates/non_dropdown/out_gate.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Gates/dropdown/AND.gd" type="Script" id=6]
+
+[node name="save_node" type="Node2D"]
+
+[node name="AND" type="Node2D" parent="." groups=["dropdown", "gates"] instance=ExtResource( 2 )]
+position = Vector2( 409.5, 180 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="connecting_line0" type="Line2D" parent="AND"]
+points = PoolVector2Array( 193, 53, 193, 53 )
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="connecting_line1" type="Line2D" parent="AND"]
+points = PoolVector2Array( -2, 20, -2, 20 )
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="connecting_line2" type="Line2D" parent="AND"]
+points = PoolVector2Array( -1, 86, -1, 86 )
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="in_on_gate" type="Node2D" parent="." groups=["gates"] instance=ExtResource( 1 )]
+position = Vector2( 213, 196 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="connecting_line0" type="Line2D" parent="in_on_gate"]
+points = PoolVector2Array( 90.3221, 31.837, 175.178, 9.16299 )
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="connecting_line1" type="Line2D" parent="in_on_gate"]
+points = PoolVector2Array( 90.3324, 42.1243, 176.168, 64.8757 )
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="out_gate" type="Node2D" parent="." groups=["gates"] instance=ExtResource( 5 )]
+position = Vector2( 740, 202 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="connecting_line0" type="Line2D" parent="out_gate"]
+points = PoolVector2Array( -19.9868, 35.2732, -117.513, 31.7268 )
+default_color = Color( 1, 1, 1, 1 )
